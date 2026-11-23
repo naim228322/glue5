@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CineBase — мир кино</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:#101014;color:#fff;font-family:Arial,sans-serif}
+a{color:inherit;text-decoration:none}
+header{height:75px;padding:0 8%;display:flex;align-items:center;justify-content:space-between;background:#17171d;border-bottom:1px solid #292932}
+.logo{font-size:25px;font-weight:bold;letter-spacing:-1px}
+.logo span{color:#9b6cff}
+nav{display:flex;gap:30px;color:#b7b7c2;font-size:14px}
+nav a:hover{color:#a982ff}
+.login{background:#8254e8;padding:11px 20px;border-radius:8px;font-size:14px}
+.container{width:84%;max-width:1400px;margin:auto}
+.hero{margin-top:35px;min-height:330px;padding:55px;border-radius:18px;display:flex;flex-direction:column;justify-content:center;background:linear-gradient(90deg,#251a40 0%,#211a35 55%,#171522 100%);border:1px solid #3b2c59}
+.hero-label{color:#b99aff;font-size:13px;text-transform:uppercase;letter-spacing:2px;margin-bottom:18px}
+.hero h1{font-size:43px;max-width:600px;margin-bottom:15px}
+.hero p{color:#c0bbc9;line-height:1.7;max-width:520px;margin-bottom:25px}
+.hero-button{display:inline-block;width:fit-content;padding:13px 23px;background:#8c60ef;border-radius:8px;font-weight:bold}
+section{margin-top:50px}
+.section-title{font-size:25px;margin-bottom:22px}
+.section-subtitle{color:#92929e;font-size:14px;margin-top:7px}
+.search-box{display:flex;gap:12px;margin-bottom:25px}
+.search-box input{flex:1;padding:15px 18px;background:#1c1c24;border:1px solid #343440;border-radius:9px;color:white;outline:none;font-size:14px}
+.search-box input:focus{border-color:#9467f5}
+.search-box button{padding:0 25px;border:none;border-radius:9px;background:#8254e8;color:white;font-weight:bold;cursor:pointer}
+.genres{display:flex;gap:10px;flex-wrap:wrap}
+.genre{padding:10px 17px;background:#1d1d26;border:1px solid #343440;border-radius:20px;color:#c5c5d0;font-size:13px}
+.genre.active{background:#8254e8;border-color:#8254e8;color:white}
+.movies{display:grid;grid-template-columns:repeat(5,1fr);gap:22px}
+.movie-card{background:#1a1a21;border:1px solid #292932;border-radius:12px;overflow:hidden;transition:.2s}
+.movie-card:hover{transform:translateY(-5px);border-color:#8254e8}
+.poster{height:290px;display:flex;align-items:center;justify-content:center;text-align:center;padding:20px;font-size:27px;font-weight:bold;letter-spacing:1px}
+.poster-one{background:linear-gradient(145deg,#142b40,#39708c,#10131d)}
+.poster-two{background:linear-gradient(145deg,#452020,#a04b39,#1d1218)}
+.poster-three{background:linear-gradient(145deg,#282044,#7150a0,#161320)}
+.poster-four{background:linear-gradient(145deg,#34412c,#879b4d,#161d17)}
+.poster-five{background:linear-gradient(145deg,#392d19,#a47b36,#20170e)}
+.movie-info{padding:15px}
+.movie-info h3{font-size:16px;margin-bottom:8px}
+.movie-meta{color:#92929e;font-size:13px}
+.movie-rating{color:#f5c451;margin-top:12px;font-size:14px}
+footer{margin-top:70px;padding:30px 8%;background:#17171d;border-top:1px solid #292932;text-align:center;color:#858590;font-size:13px}
+@media(max-width:1000px){.movies{grid-template-columns:repeat(3,1fr)}.container{width:90%}}
+@media(max-width:650px){header{padding:0 5%}nav{display:none}.container{width:92%}.hero{padding:30px 23px;min-height:280px}.hero h1{font-size:30px}.movies{grid-template-columns:repeat(2,1fr);gap:12px}.poster{height:210px;font-size:20px}.search-box{flex-direction:column}.search-box button{padding:14px}}
+</style>
+</head>
+<body>
+<header>
+  <a href="#" class="logo">Cine<span>Base</span></a>
+  <nav>
+    <a href="#">Главная</a><a href="#catalog">Каталог</a><a href="#genres">Жанры</a><a href="#about">О проекте</a>
+  </nav>
+  <a href="#" class="login">Войти</a>
+</header>
+<main class="container">
+  <div class="hero">
+    <div class="hero-label">Твоя киноэнциклопедия</div>
+    <h1>Открой для себя мир кино</h1>
+    <p>Исследуй фильмы и сериалы, изучай рейтинги, находи интересные произведения и создавай собственную коллекцию.</p>
+    <a href="#catalog" class="hero-button">Перейти в каталог</a>
+  </div>
+  <section id="catalog">
+    <h2 class="section-title">Каталог</h2>
+    <p class="section-subtitle">Найди фильм или сериал по своему вкусу</p>
+    <div class="search-box">
+      <input type="text" placeholder="Поиск фильмов и сериалов...">
+      <button type="button">Найти</button>
+    </div>
+    <div class="genres" id="genres">
+      <span class="genre active">Все</span><span class="genre">Боевики</span><span class="genre">Драмы</span><span class="genre">Комедии</span><span class="genre">Фантастика</span><span class="genre">Ужасы</span><span class="genre">Триллеры</span>
+    </div>
+  </section>
+  <section>
+    <h2 class="section-title">Популярное</h2>
+    <div class="movies">
+      <article class="movie-card"><div class="poster poster-one">INTERSTELLAR</div><div class="movie-info"><h3>Интерстеллар</h3><div class="movie-meta">2014 · Фантастика</div><div class="movie-rating">★ 8.7 / 10</div></div></article>
+      <article class="movie-card"><div class="poster poster-two">JOKER</div><div class="movie-info"><h3>Джокер</h3><div class="movie-meta">2019 · Драма</div><div class="movie-rating">★ 8.1 / 10</div></div></article>
+      <article class="movie-card"><div class="poster poster-three">DUNE</div><div class="movie-info"><h3>Дюна</h3><div class="movie-meta">2021 · Фантастика</div><div class="movie-rating">★ 7.8 / 10</div></div></article>
+      <article class="movie-card"><div class="poster poster-four">AVATAR</div><div class="movie-info"><h3>Аватар</h3><div class="movie-meta">2009 · Фантастика</div><div class="movie-rating">★ 7.6 / 10</div></div></article>
+      <article class="movie-card"><div class="poster poster-five">GLADIATOR</div><div class="movie-info"><h3>Гладиатор</h3><div class="movie-meta">2000 · Боевик</div><div class="movie-rating">★ 8.2 / 10</div></div></article>
+    </div>
+  </section>
+  <section id="about">
+    <h2 class="section-title">О CineBase</h2>
+    <p class="section-subtitle">CineBase — учебный проект каталога фильмов и сериалов. В дальнейшем сайт будет использовать TMDB API, Python Flask и базу данных SQLite.</p>
+  </section>
+</main>
+<footer>© 2026 CineBase. Учебный проект. Данные о фильмах планируется получать через TMDB API.</footer>
+</body>
+</html>
